@@ -1,0 +1,3 @@
+[run]
+source = pythonTest
+omit = pythonTest/test*
