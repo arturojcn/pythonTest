@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "303c2a61-1b5b-4da7-afff-a910c3fb00ca",
+		"name": "pythonTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73c03987-9560-4199-b565-81ee3685cbbe",
+						"exec": [
+							"var response = pm.response.json()",
+							"pm.environment.set(\"jwt_python\", response.token)",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_python}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"email\": \"r2d12@gmail.com\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6545/api/v01/user/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6545",
+					"path": [
+						"api",
+						"v01",
+						"user",
+						"signin"
+					]
+				},
+				"description": "make a signin, tis endpoint return a token session "
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73c03987-9560-4199-b565-81ee3685cbbe",
+						"exec": [
+							"var response = pm.response.json()",
+							"pm.environment.set(\"jwt_python\", response.token)",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_python}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"email\": \"r2d12@gmail.com\",\n    \"password\": \"qwerty\",\n    \"document\": \"912381123\",\n    \"name\": \"arthur\",\n    \"last_name\":\"skywalker\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6545/api/v01/user/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6545",
+					"path": [
+						"api",
+						"v01",
+						"user",
+						"signin"
+					]
+				},
+				"description": "this request create a new user and return the requesst data"
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_python}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": 200,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOnsiaWQiOjEsImxhc3RfbmFtZSI6InNreXdhbGtlciIsImRvY3VtZW50IjoiOTEyMzgxMTIzIiwiY3JlYXRpb25fZGF0ZSI6IjIwMjAtMDctMzFUMTg6MTQ6MDAiLCJuYW1lIjoiYXJ0aHVyIiwic3RhdHVzIjp0cnVlLCJwYXNzd29yZCI6IiQyYiQxMiROSi9uU00ySlBDUURxUHlJbWJpaWFPTUFlWG1aNC91R0VGTlZOSTVHVHcxb1g0ai80MUdMbSIsImVtYWlsIjoicjJkMTJAZ21haWwuY29tIn0sImlhdCI6MTU5NjIzMjY0MiwiZXhwIjoxNTk2MjMyODIyfQ.0yi0JIN0cfjIkMZNvJbPcsKxL8f69oyivfS6WbGCdIsv8eM6nnAd6MlJjORUzrgZP-DojDiSgsrj5_ht5q8U2w\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6545/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6545",
+					"path": [
+						""
+					]
+				},
+				"description": "this return welcomen message if you're login other whise return you're not login"
+			},
+			"response": []
+		},
+		{
+			"name": "create wallet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_python}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6545/api/v01/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6545",
+					"path": [
+						"api",
+						"v01",
+						"wallet"
+					]
+				},
+				"description": "create a new wallet to logged user"
+			},
+			"response": []
+		},
+		{
+			"name": "getWallets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_python}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6545/api/v01/wallets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6545",
+					"path": [
+						"api",
+						"v01",
+						"wallets"
+					]
+				},
+				"description": "get all wallets of the logged user"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
